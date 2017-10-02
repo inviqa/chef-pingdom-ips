@@ -23,7 +23,7 @@ echo $INFO > $ALLOW_FROM_TEMP
 # add the list of ips
 for LIST in "${IP_LISTS[@]}"
 do
-  eval "$CURL -s $LIST |sed -e ''/^$/d';s/^/allow_from /;s/$/;/' >> $ALLOW_FROM_TEMP"
+  eval "$CURL -s $LIST |sed -e ''/^$/d';s/^/allow /;s/$/;/' >> $ALLOW_FROM_TEMP"
 done
 
 # compares the newly generated file with the existing one.
